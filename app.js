@@ -4,7 +4,7 @@ const ejs = require("ejs");
 const mongoose = require("mongoose");
 
 const app = express();
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 app.set("view engine", "ejs");
 
@@ -17,6 +17,7 @@ app.use(express.static("public"));
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/myDatabase", {
   useNewUrlParser: true,
+  useUnifiedTopology:true
 });
 
 const articleSchema = {
@@ -113,6 +114,6 @@ app
     });
   });
 
-app.listen(port, function () {
-  console.log(`Server started on port ${port}`);
+app.listen(PORT, function () {
+  console.log(`Server started on port ${PORT}`);
 });

@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node app",
+    "client": "cd TESTAPI2 && npm start",
+    "heroku-postbuild": "cd TESTAPI2 && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
